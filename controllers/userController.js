@@ -9,7 +9,7 @@ module.exports = {
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select('-__v')
-      .then(async (user) => !user ? res.status(404).json({ message: 'Try Agian' }) : res.json({ user }))
+      .then(async (user) => !user ? res.status(404).json({ message: 'Try Again' }) : res.json({ user }))
       .catch((err) => { console.log(err); return res.status(500).json(err);});
   },
   createUser(req, res) {
